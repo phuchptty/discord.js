@@ -140,7 +140,7 @@ class Client extends BaseClient {
      * @private
      * @type {ClientPresence}
      */
-    this.presence = new ClientPresence(this, this.options.presence);
+    this.presence = new ClientPresence(this);
 
     Object.defineProperty(this, 'token', { writable: true });
     if (!this.token && 'DISCORD_TOKEN' in process.env) {
@@ -520,6 +520,7 @@ class Client extends BaseClient {
   toJSON() {
     return super.toJSON({
       readyAt: false,
+      presences: false,
     });
   }
 
@@ -541,8 +542,7 @@ class Client extends BaseClient {
    */
   _validateOptions(options = this.options) {
     if (typeof options.intents === 'undefined') {
-      throw new TypeError('CLIENT_MISSING_INTENTS');
-    } else {
+
       options.intents = Intents.resolve(options.intents);
     }
     if (typeof options.shardCount !== 'number' || isNaN(options.shardCount) || options.shardCount < 1) {

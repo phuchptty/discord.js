@@ -1,6 +1,6 @@
 'use strict';
 
-const ClientApplication = require('../../../structures/ClientApplication');
+// const ClientApplication = require('../../../structures/ClientApplication');
 let ClientUser;
 
 module.exports = (client, { d: data }, shard) => {
@@ -17,11 +17,11 @@ module.exports = (client, { d: data }, shard) => {
     client.guilds._add(guild);
   }
 
-  if (client.application) {
-    client.application._patch(data.application);
-  } else {
-    client.application = new ClientApplication(client, data.application);
-  }
+  // if (client.application) {
+  //   client.application._patch(data.application);
+  // } else {
+  //   client.application = new ClientApplication(client, data.application);
+  // }
 
   shard.checkReady();
 };
