@@ -23,33 +23,39 @@ class ClientApplication extends Application {
   _patch(data) {
     super._patch(data);
 
-    if ('flags' in data) {
-      /**
-       * The flags this application has
-       * @type {ApplicationFlags}
-       */
-      this.flags = null;
-    }
+    // if ('flags' in data) {
+    //   /**
+    //    * The flags this application has
+    //    * @type {ApplicationFlags}
+    //    */
+    //   this.flags = null;
+    // }
 
-    if ('cover_image' in data) {
-      /**
-       * The hash of the application's cover image
-       * @type {?string}
-       */
-      this.cover = data.cover_image;
-    } else {
-      this.cover = null;
-    }
+    this.flags = null;
 
-    if ('rpc_origins' in data) {
-      /**
-       * The application's RPC origins, if enabled
-       * @type {string[]}
-       */
-      this.rpcOrigins = data.rpc_origins;
-    } else {
-      this.rpcOrigins = null;
-    }
+    // if ('cover_image' in data) {
+    //   /**
+    //    * The hash of the application's cover image
+    //    * @type {?string}
+    //    */
+    //   this.cover = data.cover_image;
+    // } else {
+    //   this.cover = null;
+    // }
+
+    this.cover = null;
+
+    // if ('rpc_origins' in data) {
+    //   /**
+    //    * The application's RPC origins, if enabled
+    //    * @type {string[]}
+    //    */
+    //   this.rpcOrigins = data.rpc_origins;
+    // } else {
+    //   this.rpcOrigins = null;
+    // }
+
+    this.rpcOrigins = null;
 
     // if ('bot_require_code_grant' in data) {
     //   /**
