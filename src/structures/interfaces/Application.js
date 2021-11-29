@@ -23,15 +23,17 @@ class Application extends Base {
      */
     this.id = null;
 
-    if ('name' in data) {
-      /**
-       * The name of the application
-       * @type {?string}
-       */
-      this.name = data.name;
-    } else {
-      this.name = null;
-    }
+    // if ('name' in data) {
+    //   /**
+    //    * The name of the application
+    //    * @type {?string}
+    //    */
+    //   this.name = data.name;
+    // } else {
+    //   this.name = null;
+    // }
+
+    this.name = null
 
     // if ('description' in data) {
     //   /**
