@@ -28,7 +28,7 @@ class ClientApplication extends Application {
        * The flags this application has
        * @type {ApplicationFlags}
        */
-      this.flags = new ApplicationFlags(data.flags).freeze();
+      this.flags = null;
     }
 
     if ('cover_image' in data) {
@@ -38,7 +38,7 @@ class ClientApplication extends Application {
        */
       this.cover = data.cover_image;
     } else {
-      this.cover ??= null;
+      this.cover = null;
     }
 
     if ('rpc_origins' in data) {
@@ -48,38 +48,44 @@ class ClientApplication extends Application {
        */
       this.rpcOrigins = data.rpc_origins;
     } else {
-      this.rpcOrigins ??= [];
+      this.rpcOrigins = null;
     }
 
-    if ('bot_require_code_grant' in data) {
-      /**
-       * If this application's bot requires a code grant when using the OAuth2 flow
-       * @type {?boolean}
-       */
-      this.botRequireCodeGrant = data.bot_require_code_grant;
-    } else {
-      this.botRequireCodeGrant ??= null;
-    }
+    // if ('bot_require_code_grant' in data) {
+    //   /**
+    //    * If this application's bot requires a code grant when using the OAuth2 flow
+    //    * @type {?boolean}
+    //    */
+    //   this.botRequireCodeGrant = data.bot_require_code_grant;
+    // } else {
+    //   this.botRequireCodeGrant ??= null;
+    // }
 
-    if ('bot_public' in data) {
-      /**
-       * If this application's bot is public
-       * @type {?boolean}
-       */
-      this.botPublic = data.bot_public;
-    } else {
-      this.botPublic ??= null;
-    }
+    this.botRequireCodeGrant = null;
+
+    // if ('bot_public' in data) {
+    //   /**
+    //    * If this application's bot is public
+    //    * @type {?boolean}
+    //    */
+    //   this.botPublic = data.bot_public;
+    // } else {
+    //   this.botPublic ??= null;
+    // }
+
+    this.botPublic = null
 
     /**
      * The owner of this OAuth application
      * @type {?(User|Team)}
      */
-    this.owner = data.team
-      ? new Team(this.client, data.team)
-      : data.owner
-      ? this.client.users._add(data.owner)
-      : this.owner ?? null;
+    // this.owner = data.team
+    //   ? new Team(this.client, data.team)
+    //   : data.owner
+    //     ? this.client.users._add(data.owner)
+    //     : this.owner ?? null;
+
+    this.owner = null
   }
 
   /**

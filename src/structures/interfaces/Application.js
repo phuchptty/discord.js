@@ -21,7 +21,7 @@ class Application extends Base {
      * The application's id
      * @type {Snowflake}
      */
-    this.id = data.id;
+    this.id = null;
 
     if ('name' in data) {
       /**
@@ -30,28 +30,32 @@ class Application extends Base {
        */
       this.name = data.name;
     } else {
-      this.name ??= null;
+      this.name = null;
     }
 
-    if ('description' in data) {
-      /**
-       * The application's description
-       * @type {?string}
-       */
-      this.description = data.description;
-    } else {
-      this.description ??= null;
-    }
+    // if ('description' in data) {
+    //   /**
+    //    * The application's description
+    //    * @type {?string}
+    //    */
+    //   this.description = data.description;
+    // } else {
+    //   this.description ??= null;
+    // }
 
-    if ('icon' in data) {
-      /**
-       * The application's icon hash
-       * @type {?string}
-       */
-      this.icon = data.icon;
-    } else {
-      this.icon ??= null;
-    }
+    this.description = null
+
+    // if ('icon' in data) {
+    //   /**
+    //    * The application's icon hash
+    //    * @type {?string}
+    //    */
+    //   this.icon = data.icon;
+    // } else {
+    //   this.icon ??= null;
+    // }
+
+    this.icon = null
   }
 
   /**
